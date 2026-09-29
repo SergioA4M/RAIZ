@@ -35,4 +35,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.linearVelocity = moveInput * speed;
     }
+
+    // Mejora: percent = 0.1 significa "+10 % de velocidad".
+    public void IncreaseSpeed(float percent)
+    {
+        speed *= 1f + percent;
+    }
 }

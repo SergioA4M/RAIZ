@@ -14,8 +14,10 @@ public class Health : MonoBehaviour
     [SerializeField] private bool destroyOnDeath = true;
 
     public int CurrentHealth { get; private set; }
+    public int MaxHealth => maxHealth;
 
-    // Evento: otros scripts se "suscriben" para enterarse de la muerte.
+    // Eventos: otros scripts se "suscriben" para enterarse de lo que pasa.
+    public event Action HealthChanged;
     public event Action Died;
 
     private SpriteRenderer sprite;
@@ -37,8 +39,9 @@ public class Health : MonoBehaviour
         // Ya muerto o todavía protegido: ignoramos el golpe.
         if (CurrentHealth <= 0 || Time.time < invulnerableUntil) return;
 
-        CurrentHealth -= amount;
+        CurrentHealth = Mathf.Max(CurrentHealth - amount, 0);
         invulnerableUntil = Time.time + invulnerableTime;
+        HealthChanged?.Invoke();
 
         if (sprite != null)
         {
@@ -49,6 +52,14 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+    }
+
+    // Mejora: sube la vida máxima y cura por completo.
+    public void IncreaseMaxHealth(int amount)
+    {
+        maxHealth += amount;
+        CurrentHealth = maxHealth;
+        HealthChanged?.Invoke();
     }
 
     // Corrutina: una función que puede "esperar" sin congelar el juego.

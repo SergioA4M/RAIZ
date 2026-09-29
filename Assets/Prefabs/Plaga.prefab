@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8576107923019027286}
   - component: {fileID: -1699455611095717476}
   - component: {fileID: -1405889628140253695}
+  - component: {fileID: -7496494567910355747}
   m_Layer: 0
   m_Name: Plaga
   m_TagString: Untagged
@@ -211,3 +212,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContactDamage
   damage: 1
+--- !u!114 &-7496494567910355747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030657617852310292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b8b39235017334ebd89ec875a8eb36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropOnDeath
+  dropPrefab: {fileID: 4178166155174542147, guid: c7a67d84794379544b83ba2598df7b75, type: 3}

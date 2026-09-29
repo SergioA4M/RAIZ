@@ -5,12 +5,15 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    [SerializeField] private int damage = 1;
     [SerializeField] private float lifetime = 3f;
 
+    // El daño lo decide quien dispara (AutoShooter), para poder mejorarlo.
+    private int damage;
+
     // La llama el AutoShooter justo después de crear la hoja.
-    public void Launch(Vector2 direction)
+    public void Launch(Vector2 direction, int damage)
     {
+        this.damage = damage;
         GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
 
         // Si no choca con nada, se destruye sola a los pocos segundos.
