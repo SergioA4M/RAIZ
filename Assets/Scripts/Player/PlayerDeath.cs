@@ -20,7 +20,11 @@ public class PlayerDeath : MonoBehaviour
         if (TryGetComponent(out PlayerMovement movement)) movement.enabled = false;
         if (TryGetComponent(out AutoShooter shooter)) shooter.enabled = false;
         if (TryGetComponent(out Rigidbody2D rb)) rb.linearVelocity = Vector2.zero;
-        if (TryGetComponent(out SpriteRenderer sprite)) sprite.enabled = false;
+        // GetComponentsInChildren: el sprite del espíritu y los de sus hijos (la flecha de dirección).
+        foreach (SpriteRenderer sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.enabled = false;
+        }
 
         StartCoroutine(RestartAfterDelay());
     }

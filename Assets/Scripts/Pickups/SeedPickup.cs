@@ -8,6 +8,12 @@ public class SeedPickup : MonoBehaviour
     [SerializeField] private float magnetRadius = 2.5f;
     [SerializeField] private float magnetSpeed = 12f;
 
+    // Efecto opcional (partículas) que aparece al recogerla. Si está vacío, no pasa nada.
+    [SerializeField] private GameObject pickupEffect;
+
+    [SerializeField] private AudioClip pickupSound;
+    [SerializeField, Range(0f, 1f)] private float pickupVolume = 0.5f;
+
     private Transform player;
     private bool attracted;
 
@@ -42,6 +48,13 @@ public class SeedPickup : MonoBehaviour
         if (other.TryGetComponent(out PlayerExperience experience))
         {
             experience.AddXP(xpValue);
+            SoundManager.Play(pickupSound, pickupVolume);
+
+            if (pickupEffect != null)
+            {
+                Instantiate(pickupEffect, transform.position, Quaternion.identity);
+            }
+
             Destroy(gameObject);
         }
     }

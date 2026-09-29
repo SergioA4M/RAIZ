@@ -95,6 +95,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4030657617852310292, guid: a969ad584232e8b4d93cb046a800a2ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4681819223071201888}
+    - targetCorrespondingSourceObject: {fileID: 4030657617852310292, guid: a969ad584232e8b4d93cb046a800a2ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4119850931292776982}
   m_SourcePrefab: {fileID: 100100000, guid: a969ad584232e8b4d93cb046a800a2ae, type: 3}
 --- !u!1 &6618592124856262616 stripped
 GameObject:
@@ -118,3 +121,19 @@ MonoBehaviour:
   chargeSpeed: 12
   chargeDuration: 0.5
   windUpColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  chargeSound: {fileID: 8300000, guid: 5d64a6327d157634d928fea6d625d8fb, type: 3}
+--- !u!114 &-4119850931292776982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618592124856262616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412eb362c7fe2e6408b0a9fd4f4dc1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpactFeedback
+  shakeOnDamage: 0
+  shakeOnDeath: 1
+  hitStopOnDeath: 0.15

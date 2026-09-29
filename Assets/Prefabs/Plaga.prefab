@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: -1699455611095717476}
   - component: {fileID: -1405889628140253695}
   - component: {fileID: -7496494567910355747}
+  - component: {fileID: 226825198371862307}
+  - component: {fileID: -8331939221443711356}
+  - component: {fileID: 3474901155527601712}
   m_Layer: 0
   m_Name: Plaga
   m_TagString: Untagged
@@ -225,3 +228,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropOnDeath
   dropPrefab: {fileID: 4178166155174542147, guid: c7a67d84794379544b83ba2598df7b75, type: 3}
+  amount: 1
+  scatterRadius: 1
+--- !u!114 &226825198371862307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030657617852310292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b8b39235017334ebd89ec875a8eb36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropOnDeath
+  dropPrefab: {fileID: 9063755898081707495, guid: c3726739bdc363043917370f2140fd0f, type: 3}
+  amount: 1
+  scatterRadius: 1
+--- !u!114 &-8331939221443711356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030657617852310292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6542c22296d9a3349a0746a2d018fb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamagePopup
+  numberPrefab: {fileID: 5920638254891987114, guid: bac4fa075fcc99346929be29ade2e007, type: 3}
+  heightOffset: 0.5
+--- !u!114 &3474901155527601712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030657617852310292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d5b70202e08ff408ca92a4255328ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthSounds
+  damagedSound: {fileID: 8300000, guid: c2bd6923909414e488cca141cc9ae160, type: 3}
+  deathSound: {fileID: 8300000, guid: a9463e7f4646549418bb31fcbb25f836, type: 3}
+  volume: 0.5

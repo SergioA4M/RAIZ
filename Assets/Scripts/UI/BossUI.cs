@@ -17,6 +17,10 @@ public class BossUI : MonoBehaviour
 
     [SerializeField] private float announcementDuration = 2.5f;
 
+    [Header("Sonidos")]
+    [SerializeField] private AudioClip bossArrivalSound;
+    [SerializeField] private AudioClip bossDefeatedSound;
+
     private Health boss;
 
     private void Awake()
@@ -44,6 +48,7 @@ public class BossUI : MonoBehaviour
         bossPanel.SetActive(true);
         RefreshBar();
         StartCoroutine(Announce("¡Llega la Gran Plaga!"));
+        SoundManager.Play(bossArrivalSound);
     }
 
     private void RefreshBar()
@@ -55,6 +60,7 @@ public class BossUI : MonoBehaviour
     {
         bossPanel.SetActive(false);
         StartCoroutine(Announce("¡Jefe derrotado!"));
+        SoundManager.Play(bossDefeatedSound);
     }
 
     // Muestra un texto grande unos segundos y lo vuelve a ocultar.

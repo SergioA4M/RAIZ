@@ -12,6 +12,7 @@ public class BossCharge : MonoBehaviour
     [SerializeField] private float chargeSpeed = 12f;
     [SerializeField] private float chargeDuration = 0.5f;
     [SerializeField] private Color windUpColor = Color.yellow;
+    [SerializeField] private AudioClip chargeSound;
 
     private Rigidbody2D rb;
     private EnemyChase chase;
@@ -58,6 +59,8 @@ public class BossCharge : MonoBehaviour
             // 3. Embestida en línea recta hacia donde estaba el jugador.
             Vector2 direction = ((Vector2)target.position - rb.position).normalized;
             rb.linearVelocity = direction * chargeSpeed;
+            CameraShake.Add(0.3f); // la embestida hace temblar el suelo
+            SoundManager.Play(chargeSound);
             yield return new WaitForSeconds(chargeDuration);
 
             // 4. Vuelta a perseguir.

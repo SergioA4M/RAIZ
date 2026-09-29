@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2054805541375878384}
   - component: {fileID: 2865669316237341941}
   - component: {fileID: 6611153227063998070}
+  - component: {fileID: 962101945623475339}
   m_Layer: 0
   m_Name: Semillas
   m_TagString: Untagged
@@ -145,3 +146,21 @@ MonoBehaviour:
   xpValue: 1
   magnetRadius: 2.5
   magnetSpeed: 12
+  pickupEffect: {fileID: 7295963281440849833, guid: 774206afbb02e90469c484dd242b96a1, type: 3}
+  pickupSound: {fileID: 8300000, guid: 1400b6b8c9c91c44c971f65150c79d60, type: 3}
+  pickupVolume: 0.5
+--- !u!114 &962101945623475339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4178166155174542147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad413308defcb04182304df79331ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 3
+  invulnerableTime: 0
+  destroyOnDeath: 1

@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
 
     // Eventos: otros scripts se "suscriben" para enterarse de lo que pasa.
     public event Action HealthChanged;
+    public event Action<int> Damaged;   // envía cuánto daño se ha recibido
     public event Action Died;
 
     private SpriteRenderer sprite;
@@ -42,6 +43,7 @@ public class Health : MonoBehaviour
         CurrentHealth = Mathf.Max(CurrentHealth - amount, 0);
         invulnerableUntil = Time.time + invulnerableTime;
         HealthChanged?.Invoke();
+        Damaged?.Invoke(amount);
 
         if (sprite != null)
         {

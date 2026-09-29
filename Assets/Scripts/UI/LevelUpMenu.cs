@@ -18,6 +18,10 @@ public class LevelUpMenu : MonoBehaviour
     // Todas las mejoras posibles. De aquí se sacan 3 al azar.
     [SerializeField] private List<UpgradeData> upgrades;
 
+    [Header("Sonidos")]
+    [SerializeField] private AudioClip levelUpSound;
+    [SerializeField] private AudioClip chooseSound;
+
     private readonly List<UpgradeData> currentOptions = new List<UpgradeData>();
     private int pendingLevelUps;
 
@@ -94,6 +98,7 @@ public class LevelUpMenu : MonoBehaviour
         }
 
         panel.SetActive(true);
+        SoundManager.Play(levelUpSound);
 
         // timeScale = 0 congela todo lo que depende del tiempo: física, disparos, enemigos...
         Time.timeScale = 0f;
@@ -104,6 +109,7 @@ public class LevelUpMenu : MonoBehaviour
         if (index >= currentOptions.Count) return;
 
         currentOptions[index].Apply(experience.gameObject);
+        SoundManager.Play(chooseSound);
         pendingLevelUps--;
 
         if (pendingLevelUps > 0)
