@@ -12,6 +12,11 @@ public class EnemyChase : MonoBehaviour
 
     [SerializeField] private float speed = 2f;
 
+    // Otros scripts (como BossCharge) pueden parar la persecución un momento.
+    // No desactivamos el script entero porque entonces saldría de la lista All
+    // y el AutoShooter dejaría de dispararle.
+    public bool CanMove { get; set; } = true;
+
     private Rigidbody2D rb;
     private Transform target;
 
@@ -44,7 +49,7 @@ public class EnemyChase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (target == null) return;
+        if (target == null || !CanMove) return;
 
         // Dirección hacia el jugador, con longitud 1 (normalized),
         // para que la velocidad no dependa de lo lejos que esté.

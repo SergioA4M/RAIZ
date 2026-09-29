@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Interfaz en pantalla: barra de semillas (XP), nivel y vida.
+// Interfaz en pantalla: barra de semillas (XP), nivel, vida y tiempo de partida.
 public class HUD : MonoBehaviour
 {
     [Header("Jugador")]
@@ -14,6 +14,7 @@ public class HUD : MonoBehaviour
     [SerializeField] private Slider xpBar;
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text timerText;
 
     // Nos suscribimos al activarse y nos damos de baja al desactivarse,
     // para no dejar "escuchas" colgando cuando se recarga la escena.
@@ -34,6 +35,17 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         Refresh();
+    }
+
+    // El cronómetro cambia cada segundo, así que lo actualizamos en Update
+    // en vez de esperar a un evento.
+    private void Update()
+    {
+        if (timerText == null) return;
+
+        int seconds = Mathf.FloorToInt(Time.timeSinceLevelLoad);
+        // :00 = mostrar siempre dos cifras (01:05 en vez de 1:5).
+        timerText.text = $"{seconds / 60:00}:{seconds % 60:00}";
     }
 
     private void Refresh()
