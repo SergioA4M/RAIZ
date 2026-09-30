@@ -2,11 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Cuando el espíritu muere: desaparece, deja de moverse y disparar,
-// y a los pocos segundos la partida vuelve a empezar.
+// Cuando el espíritu muere: desaparece y deja de moverse y disparar.
+// Lo que pasa después (pantalla de fin de partida) lo decide GameOverScreen.
+// Si no hay pantalla de fin de partida, se puede marcar autoRestart para reiniciar solo.
 [RequireComponent(typeof(Health))]
 public class PlayerDeath : MonoBehaviour
 {
+    [Tooltip("Reiniciar la partida sola al morir (solo si no se usa GameOverScreen)")]
+    [SerializeField] private bool autoRestart = false;
     [SerializeField] private float restartDelay = 2f;
 
     private void Awake()
@@ -26,7 +29,10 @@ public class PlayerDeath : MonoBehaviour
             sprite.enabled = false;
         }
 
-        StartCoroutine(RestartAfterDelay());
+        if (autoRestart)
+        {
+            StartCoroutine(RestartAfterDelay());
+        }
     }
 
     private IEnumerator RestartAfterDelay()

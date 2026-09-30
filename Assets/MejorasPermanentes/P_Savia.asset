@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef81a83b16d6c84b954917de33f3274, type: 3}
+  m_Name: P_Savia
+  m_EditorClassIdentifier: Assembly-CSharp::PermanentUpgrade
+  id: savia
+  title: Savia afilada
+  description: "+1 da\xF1o"
+  effect: {fileID: 11400000, guid: a0f3a811127ff5f40ba92e78cd3c4770, type: 2}
+  maxLevel: 3
+  baseCost: 25
+  costIncrease: 25

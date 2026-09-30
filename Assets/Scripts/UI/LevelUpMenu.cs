@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 // Al subir de nivel: pausa el juego y ofrece 3 mejoras al azar.
-// Se elige con el ratón o con las teclas 1, 2 y 3.
+// Se elige con el teclado (flechas/WASD para moverse, Enter para aceptar),
+// con las teclas 1, 2 y 3, o con el ratón.
 public class LevelUpMenu : MonoBehaviour
 {
     [SerializeField] private PlayerExperience experience;
@@ -100,6 +102,10 @@ public class LevelUpMenu : MonoBehaviour
         panel.SetActive(true);
         SoundManager.Play(levelUpSound);
 
+        // Seleccionamos la primera opción: a partir de aquí el EventSystem de Unity
+        // mueve la selección con flechas/WASD y pulsa el botón seleccionado con Enter.
+        EventSystem.current.SetSelectedGameObject(optionButtons[0].gameObject);
+
         // timeScale = 0 congela todo lo que depende del tiempo: física, disparos, enemigos...
         Time.timeScale = 0f;
     }
@@ -119,6 +125,7 @@ public class LevelUpMenu : MonoBehaviour
         else
         {
             panel.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null); // nada seleccionado durante el juego
             Time.timeScale = 1f;
         }
     }

@@ -14,6 +14,10 @@ public class PlayerExperience : MonoBehaviour
     public int CurrentXP { get; private set; }
     public int XPToNextLevel { get; private set; }
 
+    // Total de semillas recogidas en esta partida (no se gastan al subir de nivel).
+    // Al morir se guardan en el "banco" del bosque permanente.
+    public int SeedsCollected { get; private set; }
+
     public event Action XPChanged;
     public event Action<int> LeveledUp;
 
@@ -25,6 +29,7 @@ public class PlayerExperience : MonoBehaviour
     public void AddXP(int amount)
     {
         CurrentXP += amount;
+        SeedsCollected += amount;
 
         // "while" y no "if": con muchas semillas de golpe se pueden subir varios niveles.
         while (CurrentXP >= XPToNextLevel)
