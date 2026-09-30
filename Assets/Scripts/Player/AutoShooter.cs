@@ -27,6 +27,10 @@ public class AutoShooter : MonoBehaviour
     [SerializeField] private AudioClip shootSound;
     [SerializeField, Range(0f, 1f)] private float shootVolume = 0.4f;
 
+    // Para que otros scripts (por ejemplo, la herramienta de capturas) puedan cambiar el modo.
+    public bool AutoFire { get => autoFire; set => autoFire = value; }
+    public bool AutoAim { get => autoAim; set => autoAim = value; }
+
     private float timer;
     private InputAction attackAction;
     private PlayerMovement movement;

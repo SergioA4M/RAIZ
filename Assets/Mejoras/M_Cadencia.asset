@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: M_Cadencia
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   title: Hojas veloces
-  description: "+20% de velocidad de disparo\t"
+  description: +20% de velocidad de disparo
   type: 0
   amount: 0.2

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: M_Vida
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   title: Savia
-  description: +1 vida maxima y te cura
+  description: "+1 vida m\xE1xima y te cura"
   type: 4
   amount: 1

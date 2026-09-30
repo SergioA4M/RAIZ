@@ -52,6 +52,7 @@ Eres un pequeño espíritu del bosque que protege el último árbol del mundo de
 - **Generación reproducible** del bosque con `System.Random` y semilla fija, y *Sorting Groups* para el orden de dibujo.
 - **Input System** de Unity con acciones (las teclas se cambian sin tocar código) y navegación de interfaz con `EventSystem`.
 - **Script de editor** (`Assets/Editor/BuildGame.cs`) para exportar el juego con un clic o desde línea de comandos.
+- **Capturas automáticas** (`ScreenshotDirector`): con `RAIZ.exe -capturas <carpeta>` el juego se juega solo y genera las imágenes de este README.
 
 ### 📁 Estructura
 ```
@@ -130,6 +131,7 @@ You play as a small forest spirit protecting the world's last tree from ever-gro
 - **Reproducible forest generation** with a seeded `System.Random`, plus *Sorting Groups* for draw order.
 - Unity **Input System** actions (rebindable without code) and UI navigation through the `EventSystem`.
 - **Editor script** (`Assets/Editor/BuildGame.cs`) to build the game in one click or from the command line.
+- **Automated screenshots** (`ScreenshotDirector`): running `RAIZ.exe -capturas <folder>` makes the game play itself and produce the images in this README.
 
 ### ▶️ Opening the project
 1. Install **Unity 6.6** (6000.6.3f1) through Unity Hub.

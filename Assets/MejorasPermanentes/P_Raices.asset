@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: P_Raices
   m_EditorClassIdentifier: Assembly-CSharp::PermanentUpgrade
   id: raices
-  title: Raices fuertes
-  description: +1 vida maxima
+  title: "Ra\xEDces fuertes"
+  description: "+1 vida m\xE1xima"
   effect: {fileID: 11400000, guid: 975eae2d70cfaa04d8a3d524dacab23c, type: 2}
   maxLevel: 5
   baseCost: 10

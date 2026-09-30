@@ -77,6 +77,12 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    // Para pruebas y capturas: el jefe aparece en el siguiente frame en vez de esperar a bossTime.
+    public void SpawnBossNow()
+    {
+        bossTime = Time.timeSinceLevelLoad;
+    }
+
     private GameObject Spawn(GameObject prefab)
     {
         // Una dirección al azar (x, y) de longitud 1.

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: M_Dano
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   title: Hojas afiladas
-  description: "+1% de da\xF1o por hoja"
+  description: "+1 de da\xF1o por hoja"
   type: 1
   amount: 1

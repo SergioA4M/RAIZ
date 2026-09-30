@@ -16,6 +16,9 @@ public class Health : MonoBehaviour
     public int CurrentHealth { get; private set; }
     public int MaxHealth => maxHealth;
 
+    // "Modo dios" para pruebas y capturas: si está activo, no recibe daño.
+    public bool Invincible { get; set; }
+
     // Eventos: otros scripts se "suscriben" para enterarse de lo que pasa.
     public event Action HealthChanged;
     public event Action<int> Damaged;   // envía cuánto daño se ha recibido
@@ -38,7 +41,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amount)
     {
         // Ya muerto o todavía protegido: ignoramos el golpe.
-        if (CurrentHealth <= 0 || Time.time < invulnerableUntil) return;
+        if (Invincible || CurrentHealth <= 0 || Time.time < invulnerableUntil) return;
 
         CurrentHealth = Mathf.Max(CurrentHealth - amount, 0);
         invulnerableUntil = Time.time + invulnerableTime;
